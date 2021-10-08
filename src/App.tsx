@@ -5,7 +5,7 @@ import Test from "./Test";
 const App = () => {
   return (
     <div>
-      <h1>Test title</h1>
+      <h1>Test title 2</h1>
       <Test test="test val" />
     </div>
   );
