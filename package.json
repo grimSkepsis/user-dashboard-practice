@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/grimSkepsis/user-dashboard-practice#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.8",

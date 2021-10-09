@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import Test from "./Test";
+import UserListing from "./UserListing";
+import { User } from "./util/UserTypes";
 
 const App = () => {
+  const [users, setUsers] = useState<User[] | undefined>(undefined);
+  useEffect(() => {
+    async function getUsers(): Promise<void> {
+      const fetchedUsersResponse: Response = await fetch(
+        "http://jsonplaceholder.typicode.com/users"
+      );
+      const fetchedUsers: User[] =
+        (await fetchedUsersResponse.json()) as User[];
+      setUsers(fetchedUsers);
+    }
+    void getUsers();
+  }, []);
+
   return (
-    <div>
-      <h1>Test title 2</h1>
-      <Test test="test val" />
+    <div className="app-body">
+      {users ? <UserListing fetchedUsers={users} /> : "Loading..."}
     </div>
   );
 };
