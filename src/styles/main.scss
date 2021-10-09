@@ -1,3 +1,4 @@
+@import "./themeable-variables.scss";
 html,
 body,
 #root {
@@ -31,65 +32,5 @@ button {
   display: flex;
 }
 
-// Styles for user listing
-.filter-section {
-  display: flex;
-  margin-bottom: 1rem;
-}
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  &:not(:first-child) {
-    margin-left: 0.5rem;
-  }
-}
-
-.user-listing-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.users-listing-section {
-  overflow-y: auto;
-  min-height: 0;
-  flex-shrink: 1;
-}
-
-.user-list-item {
-  padding: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  min-width: none;
-  &:nth-of-type(2n) {
-    background: lightgrey;
-  }
-  &:hover {
-    background: lightskyblue;
-    transition: background 100ms ease-in-out;
-  }
-  &:not(:first-child) {
-    border-top: 1px solid gray;
-  }
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-grow: 1;
-  min-width: 0;
-  flex-shrink: 1;
-  flex-wrap: wrap;
-}
-
-$portrait-dim: 50px;
-.portrait {
-  background: darkgray;
-  height: $portrait-dim;
-  width: $portrait-dim;
-  border-radius: 50%;
-  margin-right: 1rem;
-  flex-shrink: 0;
-}
+@import "./user-listing.scss";
+@import "./user-details.scss";

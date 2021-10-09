@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import UserListing from "./UserListing";
 import { User } from "./util/UserTypes";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import UserDetails from "./UserDetails";
 
 const App = () => {
   const [users, setUsers] = useState<User[] | undefined>(undefined);
@@ -19,7 +21,16 @@ const App = () => {
 
   return (
     <div className="app-body">
-      {users ? <UserListing fetchedUsers={users} /> : "Loading..."}
+      <Router>
+        <Switch>
+          <Route path="/user-details/:id">
+            <UserDetails />
+          </Route>
+          <Route path="/">
+            {users ? <UserListing fetchedUsers={users} /> : "Loading..."}
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };

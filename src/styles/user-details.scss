@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+.header-link {
+  text-decoration: none;
+  color: $link-color;
+}
+
+.user-details-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-posts-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.posts-listing-wrapper {
+  overflow-y: auto;
+  min-height: 0;
+  flex-shrink: 1;
+}
+
+.user-details-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  &:first-of-type h3 {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 780px) and (min-height: 640px) {
+  .user-details-body {
+    flex-direction: row;
+  }
+  .user-details-wrapper {
+    overflow: hidden;
+  }
+  .user-posts-section {
+    flex-shrink: 1;
+    min-height: 0;
+    margin-left: 1rem;
+  }
+  .user-details-body {
+    overflow: hidden;
+  }
+}

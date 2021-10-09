@@ -1,5 +1,6 @@
 import { ReactElement, useState } from "react";
 import { User } from "./util/UserTypes";
+import { Link } from "react-router-dom";
 
 type Props = {
   fetchedUsers: User[];
@@ -83,17 +84,28 @@ const UserListing = ({ fetchedUsers }: Props): ReactElement => {
 
   function renderUserEntry(user: User) {
     return (
-      <div key={user.id} className="user-list-item">
+      <Link
+        key={user.id}
+        className="user-list-item"
+        to={"/user-details/" + user.id}
+      >
         <div className="portrait"></div>
         <div className="user-info">
           <div className="left-content">
             <div>{user.name}</div>
             <div>{user.username}</div>
           </div>
-
-          <a href={"mailto:" + user.email}>{user.email}</a>
+          <button
+            className="user-email"
+            onClick={(event) => {
+              event.preventDefault();
+              window.location.href = "mailto:" + user.email;
+            }}
+          >
+            {user.email}
+          </button>
         </div>
-      </div>
+      </Link>
     );
   }
 };
