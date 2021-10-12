@@ -17,6 +17,9 @@
   overflow-y: auto;
   min-height: 0;
   flex-shrink: 1;
+  > div {
+    width: 100%;
+  }
 }
 
 .user-details-body {
@@ -45,5 +48,13 @@
   }
   .user-details-body {
     overflow: hidden;
+  }
+  .posts-listing-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    > div {
+      max-width: 33%;
+    }
   }
 }
