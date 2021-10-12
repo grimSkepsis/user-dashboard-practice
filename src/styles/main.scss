@@ -1,4 +1,6 @@
 @import "./themeable-variables.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
 html,
 body,
 #root {
@@ -21,6 +23,10 @@ h1 {
 
 button {
   cursor: pointer;
+}
+
+a {
+  @include link-mixin();
 }
 
 // Styles for app container

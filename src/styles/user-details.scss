@@ -1,8 +1,5 @@
-@import "./variables.scss";
-
 .header-link {
-  text-decoration: none;
-  color: $link-color;
+  @include link-mixin();
 }
 
 .user-details-wrapper {
@@ -32,17 +29,19 @@
   }
 }
 
-@media (min-width: 780px) and (min-height: 640px) {
-  .user-details-body {
-    flex-direction: row;
-  }
+@media (min-width: $tablet-width) {
   .user-details-wrapper {
     overflow: hidden;
+  }
+  .user-info-section {
+    display: flex;
+    .info-container {
+      width: 33%;
+    }
   }
   .user-posts-section {
     flex-shrink: 1;
     min-height: 0;
-    margin-left: 1rem;
   }
   .user-details-body {
     overflow: hidden;

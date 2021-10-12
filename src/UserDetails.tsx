@@ -55,13 +55,14 @@ const UserDetails = (props: Props): ReactElement => {
                 <h2>Address</h2>
                 {`${user.address.suite} ${user.address.street}, ${user.address.city}, ${user.address.zipcode}`}
               </div>
-              <div className="info-container"></div>
-              <h2>Company</h2>
-              <div>{user.company.name}</div>
+              <div className="info-container">
+                <h2>Company</h2>
+                <div>{user.company.name}</div>
 
-              <div>{user.company.bs}</div>
+                <div>{user.company.bs}</div>
 
-              <div>{`"${user.company.catchPhrase}"`}</div>
+                <div>{`"${user.company.catchPhrase}"`}</div>
+              </div>
             </div>
             <div className="user-posts-section">
               <h2>Posts by {user.name}</h2>
