@@ -6,7 +6,7 @@ TO RUN:
 
 1. run "npm install" from the root directory
 
-2. once the install completes run "node App.js" from the project root in your terminal.
+2. once the install completes run "node App.js" from the project root
 
 3. open a browser to localhost:3000 and you should be able to view the app.
 
