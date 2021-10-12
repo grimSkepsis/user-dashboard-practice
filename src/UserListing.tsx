@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 
 type Props = {
   fetchedUsers: User[];
+  handleInvertModeCallback: () => void;
 };
 
 type SortByValue = "name" | "username" | "email";
 
-const UserListing = ({ fetchedUsers }: Props): ReactElement => {
+const UserListing = ({
+  handleInvertModeCallback,
+  fetchedUsers,
+}: Props): ReactElement => {
   const [users, setUsers] = useState(fetchedUsers);
   const [searchText, setSearchText] = useState("");
   const [sortByValue, setSortByValue] = useState("name");
@@ -41,6 +45,10 @@ const UserListing = ({ fetchedUsers }: Props): ReactElement => {
               <option value="email">Email</option>
             </select>
             <button onClick={updateSortDirection}>{sortAsc ? "↓" : "↑"}</button>
+            <button
+              className="mode-toggle"
+              onClick={handleInvertModeCallback}
+            ></button>
           </div>
         </div>
       </div>

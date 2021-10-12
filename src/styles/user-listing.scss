@@ -13,8 +13,13 @@
 }
 
 .sort-control {
+  display: flex;
   button {
     margin-left: 0.5rem;
+    background: $button-background;
+  }
+  select {
+    height: 21px;
   }
 }
 
@@ -38,11 +43,11 @@
   text-decoration: none;
   color: black;
   &:nth-of-type(2n) {
-    background: lightgrey;
+    background: $list-alt-color;
   }
   &:hover,
   &:focus {
-    background: lightskyblue;
+    background: $hover-color;
     transition: background 100ms ease-in-out;
   }
   &:not(:first-child) {
@@ -76,10 +81,27 @@ $portrait-dim: 50px;
   flex-shrink: 0;
 }
 
+button.mode-toggle {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  &:hover {
+    background: lightgray;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.dark-mode button.mode-toggle {
+  background: white;
+}
+
 @media (min-width: $large-mobile) {
   .user-info {
     flex-direction: row;
-
     align-items: center;
     justify-content: space-between;
   }

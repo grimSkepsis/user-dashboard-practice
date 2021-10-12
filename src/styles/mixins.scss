@@ -1,4 +1,8 @@
 @mixin link-mixin() {
   text-decoration: none;
   color: $link-color;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }

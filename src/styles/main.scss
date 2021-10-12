@@ -13,8 +13,18 @@ body,
   overflow: hidden;
 }
 
+html,
+body,
+#root,
+select,
+input {
+  background: $background-color;
+  background-color: $background-color;
+}
+
 * {
   box-sizing: border-box;
+  color: $text-color;
 }
 
 h1 {
