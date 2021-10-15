@@ -3,6 +3,10 @@ const app = express();
 const path = require("path");
 const port = 3000;
 
+app.get("/user-details/*", (req, res) => {
+  res.redirect("/");
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
